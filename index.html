@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Admin | MeloCare</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="dist/index.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <strong>MeloCare — Dashboard Admin</strong>
+    <span id="user-name"></span>
+    <span id="user-role"></span>
+    <button id="logout-button" type="button">Logout</button>
+  </header>
+
+  <main>
+    <section aria-labelledby="judul-jenis">
+      <h2 id="judul-jenis">Manajemen Jenis Antrian</h2>
+      <button id="reset-button" type="button">Reset Antrian</button>
+      <form id="form-jenis" novalidate>
+        <input id="input-kode" maxlength="1" placeholder="Kode (mis. C)" />
+        <input id="input-nama" placeholder="Nama layanan" />
+        <button type="submit">Tambah</button>
+      </form>
+      <p id="error-jenis" role="alert" hidden></p>
+      <table id="tabel-jenis">
+        <thead><tr><th>Kode</th><th>Layanan</th><th>Status</th><th>Aksi</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="judul-tiket">
+      <h2 id="judul-tiket">Terbitkan Tiket Manual</h2>
+      <form id="form-tiket" novalidate>
+        <select id="select-jenis"></select>
+        <select id="select-prioritas">
+          <option value="normal">Normal</option>
+          <option value="lansia">Lansia</option>
+          <option value="disabilitas">Disabilitas</option>
+          <option value="vip">VIP</option>
+        </select>
+        <button type="submit">Terbitkan</button>
+      </form>
+      <div id="kartu-tiket" hidden></div>
+    </section>
+  </main>
+</body>
+</html>
