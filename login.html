@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6a6c9" />
+  <title>Masuk | MeloCare</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="dist/login.js" defer></script>
+</head>
+<body>
+  <main class="site-shell">
+    <section class="welcome-panel" aria-labelledby="welcome-title">
+  <div class="topline">
+    <span class="sparkle">✚</span>
+    MELOCARE / HOSPITAL QUEUE
+    <span class="mini-star">♡</span>
+  </div>
+
+  <div class="poster">
+    <p class="poster-overline">WELCOME TO MELOCARE</p>
+
+<h1 id="welcome-title">
+  Better care,<br />
+  <em>better queue.</em>
+  <span class="title-star">✚</span>
+</h1>
+
+<p class="poster-caption">
+  Pelayanan lebih nyaman, antrian lebih terarah.
+</p>
+
+    <div class="poster-art" aria-hidden="true">
+      <span class="medical-icon icon-plus">✚</span>
+      <span class="medical-icon icon-heart">♡</span>
+      <span class="medical-icon icon-pill">💊</span>
+      <span class="medical-icon icon-clipboard">📋</span>
+
+      <div class="care-box">
+        <div class="care-badge">CONTOH TIKET ANTRIAN</div>
+        <div class="care-number">A-023</div>
+        <div class="care-subtext">Silakan menunggu panggilan</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-footer">
+    <span>✚ YOUR HEALTH, OUR PRIORITY</span>
+    <span>EST. 2026</span>
+  </div>
+</section>
+
+    <section class="login-panel" aria-labelledby="login-title">
+      <nav class="mini-nav" aria-label="Navigasi"><a href="ambil-antrian.html">Ambil Nomor ↗</a><a href="layar.html">Layar Antrian ↗</a></nav>
+      <div class="login-card">
+        <div class="card-top"><span class="tag">STAFF ACCESS ONLY</span><span class="tag-icon" aria-hidden="true">✻</span></div>
+        <p class="eyebrow">STAFF LOGIN ✚</p>
+        <h2 id="login-title">Masuk ke <span>MeloCare</span></h2>
+        <p class="description">
+          Login untuk mengelola sistem antrian rumah sakit dengan lebih cepat,
+          rapi, dan nyaman.
+        </p>
+        <form id="login-form" novalidate>
+          <label for="username">Username <span aria-hidden="true">✳</span></label>
+          <input id="username" name="username" type="text" autocomplete="username" placeholder="Masukkan username" required />
+          <label for="password">Password <span aria-hidden="true">✳</span></label>
+          <div class="password-field"><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Masukkan password" required /><button id="toggle-password" type="button" aria-label="Tampilkan password" aria-pressed="false">Lihat</button></div>
+          <p id="login-error" class="error-message" role="alert" aria-live="polite" hidden></p>
+          <button id="submit-button" class="submit-button" type="submit"><span id="button-label">Masuk ke Dashboard</span><span aria-hidden="true">↗</span></button>
+        </form>
+        <div class="card-note"><span aria-hidden="true">✎</span><p>Gunakan akun uji dari <a href="https://dummyjson.com/users" target="_blank" rel="noopener noreferrer">DummyJSON</a>. Halaman publik tidak perlu login.</p></div>
+      </div>
+      <footer class="login-footer">made with care <span>♥</span> — MeloCare 2026</footer>
+    </section>
+  </main>
+</body>
+</html>
