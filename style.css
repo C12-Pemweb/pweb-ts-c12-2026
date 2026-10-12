@@ -62,3 +62,50 @@
   font-size: 0.95rem;
   color: #7a6672;
 }
+
+/* ============ Dashboard Admin (index.html) ============ */
+.topbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:#2d2935;color:#fff9f5;padding:14px 26px}
+.topbar strong{font-family:'Courier New',monospace;font-size:12px;letter-spacing:1.6px}
+.topbar .spacer{flex:1}
+.user-chip{font-weight:700;font-size:13px}
+.role-chip{font-family:'Courier New',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;background:#f6a6c9;color:#2d2935;border-radius:100px;padding:5px 12px;font-weight:700}
+.admin-main{max-width:1040px;margin:0 auto;padding:30px 22px 60px;display:grid;gap:22px}
+.stat-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.stat-card{background:#fff0f5;border:2px solid #2d2935;border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 #f6a6c9}
+.stat-card b{display:block;font-family:Georgia,serif;font-size:30px;letter-spacing:-1px;color:#2d2935}
+.stat-card span{font-family:'Courier New',monospace;font-size:10px;letter-spacing:1.4px;color:#ca6188;text-transform:uppercase}
+.panel{background:#fff;border:2px solid #2d2935;border-radius:6px;box-shadow:8px 8px 0 #f6a6c9;padding:24px}
+.panel h2{font-family:Georgia,serif;font-size:26px;letter-spacing:-1px;margin:0}
+.panel-kepala{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.baris-form{display:flex;gap:10px;flex-wrap:wrap}
+.baris-form input,.baris-form select{flex:1 1 180px;width:auto}
+#input-kode{flex:0 0 110px;text-transform:uppercase}
+select{padding:16px 18px;background:#fff;border:1.5px solid #dcd6da;border-radius:5px;font:inherit;font-size:14px;color:#2d2935;outline:none;cursor:pointer}
+select:focus{border-color:#e66e9e;box-shadow:0 0 0 3px #fce3ed}
+select:disabled{background:#f4f2f4;color:#837d86;cursor:not-allowed}
+.tombol{background:#2d2935;color:#fff;border:2px solid #2d2935;border-radius:5px;padding:12px 18px;font-weight:700;font-size:13px;cursor:pointer;box-shadow:4px 4px 0 #f6a6c9;transition:transform .15s,box-shadow .15s}
+.tombol:hover{transform:translate(1px,1px);box-shadow:3px 3px 0 #f6a6c9}
+.tombol-kecil{padding:8px 13px;font-size:12px;box-shadow:3px 3px 0 #f6a6c9}
+.tombol-reset{background:#fff0f4;color:#9a254d;border-color:#9a254d;box-shadow:3px 3px 0 #f2c3d4}
+.tombol-logout{background:transparent;color:#fff9f5;border-color:#fff9f5;box-shadow:none}
+.tombol-logout:hover{background:#f6a6c9;color:#2d2935;border-color:#f6a6c9}
+.error-message{margin:14px 0 0}
+.tabel-bungkus{overflow-x:auto;margin-top:16px}
+#tabel-jenis{width:100%;border-collapse:collapse}
+#tabel-jenis th{font-family:'Courier New',monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;text-align:left;border-bottom:2px solid #2d2935;padding:9px 10px;white-space:nowrap}
+#tabel-jenis td{padding:11px 10px;border-bottom:1px dashed #cfc6cc;font-size:14px}
+#tabel-jenis tr:last-child td{border-bottom:0}
+.td-kode{font-family:'Courier New',monospace;font-weight:700}
+.chip{display:inline-block;border:1.5px solid;border-radius:100px;padding:3px 10px;font-size:11px;font-weight:700}
+.chip-aktif{background:#e9f7ee;border-color:#2e7d4f;color:#20603c}
+.chip-nonaktif{background:#f4f2f4;border-color:#837d86;color:#6b656e}
+.aksi-tombol{display:flex;gap:8px}
+.tombol-baris{background:transparent;border:1.5px solid #2d2935;border-radius:5px;padding:6px 10px;font-size:12px;font-weight:700;cursor:pointer;color:#2d2935}
+.tombol-baris:hover{background:#fce3ed}
+.tombol-hapus{color:#9a254d;border-color:#d84a78}
+.kartu-tiket{margin-top:18px;background:#fff6f7;border:2px dashed #e66e9e;border-radius:6px;padding:20px;text-align:center}
+.kartu-tiket[hidden]{display:none}
+.kartu-judul{font-family:'Courier New',monospace;font-size:11px;letter-spacing:1.6px;color:#ca6188;margin:0 0 6px}
+.kartu-nomor{font-family:Georgia,serif;font-weight:900;font-size:46px;letter-spacing:-2px;color:#2d2935}
+.kartu-info{color:#746e79;font-size:13px;margin:8px 0 0}
+@media(max-width:640px){.panel{padding:16px}.admin-main{padding:20px 14px 40px}.kartu-nomor{font-size:36px}.topbar{padding:12px 16px}}
