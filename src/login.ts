@@ -1,5 +1,3 @@
-// MeloCare — halaman login (TypeScript native)
-// Key session disepakati agar halaman milik anggota tim bisa memakainya.
 type UserRole = "admin" | "moderator" | "user";
 
 interface LoginResponse {
