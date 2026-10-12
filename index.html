@@ -3,47 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2d2935" />
   <title>Dashboard Admin | MeloCare</title>
   <link rel="stylesheet" href="style.css" />
   <script src="dist/index.js" defer></script>
 </head>
 <body>
   <header class="topbar">
-    <strong>MeloCare — Dashboard Admin</strong>
-    <span id="user-name"></span>
-    <span id="user-role"></span>
-    <button id="logout-button" type="button">Logout</button>
+    <strong>MELOCARE / DASHBOARD ADMIN</strong>
+    <span class="spacer" aria-hidden="true"></span>
+    <span class="user-chip" id="user-name"></span>
+    <span class="role-chip" id="user-role"></span>
+    <button id="logout-button" class="tombol tombol-kecil tombol-logout" type="button">Logout</button>
   </header>
 
-  <main>
-    <section aria-labelledby="judul-jenis">
-      <h2 id="judul-jenis">Manajemen Jenis Antrian</h2>
-      <button id="reset-button" type="button">Reset Antrian</button>
-      <form id="form-jenis" novalidate>
-        <input id="input-kode" maxlength="1" placeholder="Kode (mis. C)" />
-        <input id="input-nama" placeholder="Nama layanan" />
-        <button type="submit">Tambah</button>
-      </form>
-      <p id="error-jenis" role="alert" hidden></p>
-      <table id="tabel-jenis">
-        <thead><tr><th>Kode</th><th>Layanan</th><th>Status</th><th>Aksi</th></tr></thead>
-        <tbody></tbody>
-      </table>
+  <main class="admin-main">
+    <section class="stat-strip" aria-label="Ringkasan antrian">
+      <div class="stat-card"><b id="stat-jenis">0</b><span>Jenis Aktif</span></div>
+      <div class="stat-card"><b id="stat-menunggu">0</b><span>Menunggu</span></div>
+      <div class="stat-card"><b id="stat-dipanggil">0</b><span>Dipanggil</span></div>
+      <div class="stat-card"><b id="stat-selesai">0</b><span>Selesai</span></div>
     </section>
 
-    <section aria-labelledby="judul-tiket">
+    <section class="panel" aria-labelledby="judul-jenis">
+      <div class="panel-kepala">
+        <h2 id="judul-jenis">Manajemen Jenis Antrian</h2>
+        <button id="reset-button" class="tombol tombol-kecil tombol-reset" type="button">Reset Antrian</button>
+      </div>
+      <form id="form-jenis" class="baris-form" novalidate>
+        <input id="input-kode" maxlength="1" placeholder="Kode (mis. C)" aria-label="Kode jenis antrian" />
+        <input id="input-nama" placeholder="Nama layanan" aria-label="Nama layanan" />
+        <button class="tombol" type="submit">Tambah</button>
+      </form>
+      <p id="error-jenis" class="error-message" role="alert" hidden></p>
+      <div class="tabel-bungkus">
+        <table id="tabel-jenis">
+          <thead><tr><th>Kode</th><th>Layanan</th><th>Status</th><th>Tiket Berikutnya</th><th>Aksi</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="judul-tiket">
       <h2 id="judul-tiket">Terbitkan Tiket Manual</h2>
-      <form id="form-tiket" novalidate>
-        <select id="select-jenis"></select>
-        <select id="select-prioritas">
+      <form id="form-tiket" class="baris-form" novalidate>
+        <select id="select-jenis" aria-label="Jenis antrian"></select>
+        <select id="select-prioritas" aria-label="Tingkat prioritas">
           <option value="normal">Normal</option>
           <option value="lansia">Lansia</option>
           <option value="disabilitas">Disabilitas</option>
           <option value="vip">VIP</option>
         </select>
-        <button type="submit">Terbitkan</button>
+        <button class="tombol" type="submit">Terbitkan</button>
       </form>
-      <div id="kartu-tiket" hidden></div>
+      <p id="error-tiket" class="error-message" role="alert" hidden></p>
+      <div id="kartu-tiket" class="kartu-tiket" hidden></div>
     </section>
   </main>
 </body>
