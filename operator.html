@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5b8d0" />
+  <title>Operator Antrian | MeloCare</title>
+  <link rel="stylesheet" href="operator.css" />
+  <script src="dist/operator.js" defer></script>
+</head>
+<body class="operator-page">
+  <header class="operator-header">
+    <a class="operator-brand" href="index.html"><span class="operator-brand-icon">✚</span><span>MeloCare <small>/ Operator Desk</small></span></a>
+    <div class="operator-header-right"><span id="operator-user" class="operator-user"></span><button id="operator-logout" class="operator-logout" type="button">Keluar ↗</button></div>
+  </header>
+  <main class="operator-main">
+    <section class="operator-intro">
+      <div><span class="operator-kicker">✦ HOSPITAL QUEUE SYSTEM — 2026</span><h1>Selamat bertugas, <em>Operator!</em></h1><p>Panggil pasien dengan tertib. Satu antrian, satu langkah menuju pelayanan yang lebih baik.</p></div>
+      <div class="operator-intro-mark" aria-hidden="true">✚</div>
+    </section>
+    <section class="operator-stat-grid" aria-label="Statistik antrian">
+      <div class="operator-stat"><span>Menunggu</span><strong id="operator-stat-waiting">0</strong><small>pasien dalam antrian</small></div>
+      <div class="operator-stat"><span>Sedang dilayani</span><strong id="operator-stat-active">0</strong><small>tiket dipanggil</small></div>
+      <div class="operator-stat"><span>Selesai</span><strong id="operator-stat-done">0</strong><small>tiket terselesaikan</small></div>
+    </section>
+    <div class="operator-layout">
+      <section class="operator-card operator-current" aria-labelledby="operator-current-title">
+        <div class="operator-card-heading"><div><span class="operator-section-caption">01 / CURRENT QUEUE</span><h2 id="operator-current-title">Sedang Dipanggil</h2></div><span id="operator-current-badge" class="operator-pill">Menunggu panggilan</span></div>
+        <div class="operator-ticket-display" aria-live="polite"><span class="operator-ticket-caption">NOMOR ANTRIAN</span><strong id="operator-current-number">—</strong><p id="operator-current-service">Belum ada antrian yang dipanggil</p><span id="operator-current-priority" class="operator-priority">—</span></div>
+        <div class="operator-actions"><button type="button" class="operator-button operator-primary" id="operator-next">Panggil Berikutnya <span>→</span></button><button type="button" class="operator-button operator-secondary" id="operator-skip">Lewati</button><button type="button" class="operator-button operator-done" id="operator-finish">✓ Selesai</button></div>
+        <p id="operator-message" class="operator-message" role="status" aria-live="polite"></p>
+      </section>
+      <section class="operator-card operator-upcoming" aria-labelledby="operator-upcoming-title">
+        <div class="operator-card-heading"><div><span class="operator-section-caption">02 / NEXT IN LINE</span><h2 id="operator-upcoming-title">Antrian Berikutnya</h2></div><span class="operator-small-decor">✳</span></div>
+        <div id="operator-next-preview" class="operator-next-preview" aria-live="polite">Belum ada pasien menunggu.</div>
+        <div class="operator-list-header"><h3>Daftar Tunggu</h3><span>Diurutkan berdasarkan prioritas</span></div>
+        <ol id="operator-waiting-list" class="operator-waiting-list"><li class="operator-empty">Belum ada antrian.</li></ol>
+      </section>
+    </div>
+    <p class="operator-footnote">✚ MeloCare · Nomor antrian mengikuti prioritas layanan. Data tersimpan pada browser ini.</p>
+  </main>
+</body>
+</html>
