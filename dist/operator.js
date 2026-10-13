@@ -18,7 +18,7 @@
     };
     const token = localStorage.getItem("accessToken");
     const role = localStorage.getItem("role");
-    if (!token || !["admin", "moderator", "user"].includes(role ?? "")) {
+    if (!token || (role !== "admin" && role !== "moderator")) {
         window.location.replace("login.html");
         return;
     }

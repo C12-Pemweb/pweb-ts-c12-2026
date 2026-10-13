@@ -64,12 +64,10 @@ function isUserDetail(value: unknown): value is UserDetail {
   );
 }
 
-// Hanya admin dan moderator yang boleh masuk dashboard admin.
 function destinationForRole(role: UserRole): string {
-  return role === "admin" || role === "moderator" ? "index.html" : "operator.html";
+  return role === "admin" || role === "moderator" ? "index.html" : "ambil-antrian.html";
 }
 
-// Jika sesi sudah ada, jangan tampilkan form login lagi.
 const savedToken = localStorage.getItem("accessToken");
 const savedRole = localStorage.getItem("role");
 if (savedToken && (savedRole === "admin" || savedRole === "moderator" || savedRole === "user")) {

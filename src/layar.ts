@@ -19,13 +19,48 @@
         dibuatPada: number;    
     } 
 
+    const token = localStorage.getItem("accessToken");
+    const role = localStorage.getItem("role");
+    if (!token || !role) {
+        window.location.replace("login.html");
+        return;
+    }
+
     const JENIS_KEY = "melo:jenis";
     const TIKET_KEY = "melo:tiket";
 
     const daftarAntrian = document.getElementById("daftar-antrian");
+    const userInfo = document.getElementById("user-info");
+    const logoutButton = document.getElementById("logout-button");
+    const fullscreenButton = document.getElementById("fullscreen-button");
+
+    if (userInfo) {
+        const nama = localStorage.getItem("firstName") ?? "Pengguna";
+        userInfo.textContent = `${nama} (${role})`;
+    }
+
+    logoutButton?.addEventListener("click", () => {
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("role");
+        localStorage.removeItem("firstName");
+        window.location.replace("login.html");
+    });
+
+    fullscreenButton?.addEventListener("click", () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(() => {});
+        } else {
+            document.exitFullscreen().catch(() => {});
+        }
+    });
+
+    document.addEventListener("fullscreenchange", () => {
+        if (fullscreenButton) {
+            fullscreenButton.textContent = document.fullscreenElement ? "Keluar Layar Penuh" : "Layar Penuh";
+        }
+    });
 
     if (!daftarAntrian){
-        console.error("Elemen daftar-antrian tidak ditemukan.");
         return;
     }
 
@@ -54,7 +89,7 @@
     }
 
     function render(): void {
-        const jenisAntrian = muatJenis();
+        const jenisAntrian = muatJenis().filter((jenis) => jenis.aktif);
         const semuaTiket = muatTiket();
 
         daftarAntrian?.replaceChildren();
