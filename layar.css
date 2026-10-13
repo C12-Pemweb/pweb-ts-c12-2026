@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px 20px;
+}
+
+h2 {
+    max-width: 1100px;
+    margin: 0 auto 18px;
+    font-size: 25px;
+}
+
+.panel-antrian{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.daftar-antrian{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.kartu-layar {
+    background-color: lightgoldenrodyellow;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.kartu-layar h3{
+    margin: 0 0 12px;
+    font-size: 14px;
+    color: aqua;
+}
+
+.nomor{
+    margin: 0;
+    font-size: 48px;
+    letter-spacing: 2px;
+    color:navy;
+}
+
+.menunggu{
+    margin: 12px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid black;
+    font-size: 13px;
+}
