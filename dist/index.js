@@ -42,11 +42,14 @@ function buatIdTiket() {
 }
 const token = localStorage.getItem("accessToken");
 const role = localStorage.getItem("role");
-if (token && (role === "admin" || role === "moderator")) {
+if (!token) {
+    window.location.replace("login.html");
+}
+else if (role === "admin" || role === "moderator") {
     jalankanDashboard();
 }
 else {
-    window.location.replace("login.html");
+    window.location.replace(role === "user" ? "ambil-antrian.html" : "login.html");
 }
 function jalankanDashboard() {
     const nameEl = document.querySelector("#user-name");

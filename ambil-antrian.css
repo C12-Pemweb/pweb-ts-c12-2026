@@ -4,76 +4,90 @@
 
 body {
     margin: 0;
-    padding: 24px 20px;
-}
-
-h2 {
-    max-width: 1100px;
-    margin: 0 auto 8px;
-}
-
-.sub{
-    max-width: 1100px;
-    margin: 0 auto 18px;
-    color: #5d6676;
+    min-height: 100vh;
+    background: #fff9f5;
+    color: #2d2935;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .panel-ambil-antrian {
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .pilihan-ambil-antrian {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
 }
 
 .kartu{
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 18px;
-    background-color: lightgoldenrodyellow;
-    border: 1px solid black;
-    border-radius: 10px;
+    gap: 14px;
+    padding: 22px;
+    background-color: #fff;
+    border: 2px solid #2d2935;
+    border-radius: 6px;
+    box-shadow: 6px 6px 0 #f6a6c9;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.kartu:hover{
+    transform: translate(-1px, -1px);
+    box-shadow: 7px 7px 0 #f6a6c9;
 }
 
 .kartu-atas{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid #2d2935;
+    padding-bottom: 10px;
 }
 
 .kartu h3 {
     margin: 0;
-    font-size: 14px;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    color: #2d2935;
 }
 
 .kode{
-    width: 24px;
-    padding: 2px 7px;
-    border: 1px solid black;
-    font-size: 11px;
+    padding: 3px 8px;
+    border: 1.5px solid #2d2935;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: 800;
     text-align: center;
-    color: #5d6676;
+    background: #fff0f5;
+    color: #ca6188;
 }
 
 .btn-ambil{
-    padding: 12px;
-    border: 0;
-    border-radius: 6px;
-    color: #1b1200;
+    padding: 13px 16px;
+    border: 2px solid #2d2935;
+    border-radius: 5px;
+    background: #2d2935;
+    color: #fff;
     font-size: 14px;
+    font-weight: 700;
     cursor: pointer;
+    box-shadow: 4px 4px 0 #f6a6c9;
+    transition: transform .15s, box-shadow .15s;
+    text-align: center;
 }
 
 .btn-ambil:hover{
-    background: darkblue;
+    transform: translate(1px, 1px);
+    box-shadow: 3px 3px 0 #f6a6c9;
+    background: #403a4b;
 }
 
 .btn-ambil:active{
-    transform: scale(0.98);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #f6a6c9;
 }
 
 .prioritas{
@@ -83,20 +97,32 @@ h2 {
 }
 
 .btn-priotritas{
-    padding: 6px 12px;
-    border: 1px solid black;
-    border-radius: 6px;
-    background: #fff;
+    flex: 1;
+    min-width: 70px;
+    padding: 8px 10px;
+    border: 1.5px solid #2d2935;
+    border-radius: 5px;
+    background: #fff0f5;
+    color: #2d2935;
     font-size: 12px;
+    font-weight: 700;
     cursor: pointer;
+    box-shadow: 2px 2px 0 #f6a6c9;
+    transition: transform .15s, box-shadow .15s;
+    text-align: center;
 }
 
 .btn-priotritas:hover{
-    background: darkblue;
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 #f6a6c9;
+    background: #fce3ed;
 }
 
 .label-prioritas{
-    margin: 0;
-    font-size: 12px;
-    color: #5d6676;
+    margin: 4px 0 0;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: #ca6188;
+    text-transform: uppercase;
 }

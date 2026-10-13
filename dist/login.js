@@ -22,7 +22,7 @@ function setLoading(loading) {
     if (submitButton)
         submitButton.disabled = loading;
     if (buttonLabel)
-        buttonLabel.textContent = loading ? "Memverifikasi akun..." : "Masuk ke Dashboard";
+        buttonLabel.textContent = loading ? "Memverifikasi akun..." : "Masuk ke Sistem";
 }
 function isLoginResponse(value) {
     if (typeof value !== "object" || value === null) {

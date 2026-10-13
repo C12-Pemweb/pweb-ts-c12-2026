@@ -8,6 +8,10 @@ button{font:inherit}
 .operator-brand small{font-family:'Courier New',monospace;font-size:11px;letter-spacing:1px;font-weight:700;color:#f6a6c9}
 .operator-brand-icon{color:var(--ink);background:var(--pink);border-radius:3px;display:inline-grid;place-items:center;width:29px;height:29px;font-size:19px}
 .operator-header-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.topbar-nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.topbar-link{color:#fff9f5;text-decoration:none;font-size:12px;font-weight:700;padding:6px 12px;border-radius:4px;transition:background .15s,color .15s}
+.topbar-link:hover{background:#403a4b;color:#f6a6c9}
+.topbar-link.aktif{background:#f6a6c9;color:#2d2935}
 .operator-user{font-size:13px;font-weight:700;color:#fff9f5}
 .operator-logout{background:transparent;color:#fff9f5;border:2px solid #fff9f5;border-radius:5px;padding:8px 13px;font-size:12px;font-weight:700;cursor:pointer}
 .operator-logout:hover{color:var(--ink);border-color:var(--pink);background:var(--pink)}

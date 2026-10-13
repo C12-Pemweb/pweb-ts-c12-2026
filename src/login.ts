@@ -32,7 +32,7 @@ function clearError(): void {
 
 function setLoading(loading: boolean): void {
   if (submitButton) submitButton.disabled = loading;
-  if (buttonLabel) buttonLabel.textContent = loading ? "Memverifikasi akun..." : "Masuk ke Dashboard";
+  if (buttonLabel) buttonLabel.textContent = loading ? "Memverifikasi akun..." : "Masuk ke Sistem";
 }
 
 function isLoginResponse(value: unknown): value is LoginResponse {

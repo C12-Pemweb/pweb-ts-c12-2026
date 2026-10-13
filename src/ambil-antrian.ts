@@ -32,12 +32,21 @@
 
   const kontainer = document.getElementById("pilihan-ambil-antrian");
   const notifikasiTiket = document.getElementById("tiket-terbaru");
-  const userInfo = document.getElementById("user-info");
+  const userName = document.getElementById("user-name");
+  const userRole = document.getElementById("user-role");
   const logoutButton = document.getElementById("logout-button");
 
-  if (userInfo) {
-    const nama = localStorage.getItem("firstName") ?? "Pengguna";
-    userInfo.textContent = `${nama} (${role})`;
+  if (userName) {
+    userName.textContent = localStorage.getItem("firstName") ?? "Pengguna";
+  }
+  if (userRole) {
+    userRole.textContent = role;
+  }
+
+  if (role === "user") {
+    document.querySelectorAll<HTMLElement>("[data-role='admin']").forEach((el) => {
+      el.style.display = "none";
+    });
   }
 
   logoutButton?.addEventListener("click", () => {
@@ -105,7 +114,11 @@
 
     if (notifikasiTiket) {
       notifikasiTiket.style.display = "block";
-      notifikasiTiket.innerHTML = `<strong>Nomor Tiket Anda: ${tiket.label}</strong><br>Layanan: ${jenis.nama} | Prioritas: ${prioritas.toUpperCase()}`;
+      notifikasiTiket.innerHTML = `
+        <p class="kartu-judul">TIKET BERHASIL DITERBITKAN</p>
+        <div class="kartu-nomor">${tiket.label}</div>
+        <p class="kartu-info">${jenis.nama} • Prioritas ${prioritas.toUpperCase()} • Silakan menunggu panggilan</p>
+      `;
     }
     render();
   }
@@ -175,5 +188,6 @@
   });
 
   window.setInterval(render, 3000);
+  window.addEventListener("focus", render);
   render();
 })();

@@ -4,50 +4,86 @@
 
 body {
     margin: 0;
-    padding: 24px 20px;
-}
-
-h2 {
-    max-width: 1100px;
-    margin: 0 auto 18px;
-    font-size: 25px;
+    min-height: 100vh;
+    background: #fff9f5;
+    color: #2d2935;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .panel-antrian{
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 100%;
 }
 
 .daftar-antrian{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .kartu-layar {
-    background-color: lightgoldenrodyellow;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #2d2935;
+    border-radius: 6px;
+    box-shadow: 6px 6px 0 #f6a6c9;
+    padding: 24px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 240px;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.kartu-layar:hover{
+    transform: translate(-1px, -1px);
+    box-shadow: 7px 7px 0 #f6a6c9;
 }
 
 .kartu-layar h3{
-    margin: 0 0 12px;
-    font-size: 14px;
-    color: aqua;
+    margin: 0 0 10px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    color: #2d2935;
+    border-bottom: 1.5px dashed #cfc6cc;
+    padding-bottom: 10px;
+}
+
+.status{
+    margin: 0 0 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 100px;
+    background: #f4f2f4;
+    color: #746e79;
+}
+
+.status.dipanggil{
+    background: #fff0f5;
+    color: #9a254d;
+    border: 1.5px solid #d84a78;
 }
 
 .nomor{
-    margin: 0;
-    font-size: 48px;
-    letter-spacing: 2px;
-    color:navy;
+    margin: 10px 0;
+    font-family: Georgia, serif;
+    font-weight: 900;
+    font-size: clamp(48px, 5vw, 60px);
+    letter-spacing: -2px;
+    color: #2d2935;
 }
 
 .menunggu{
-    margin: 12px 0 0;
+    margin: 14px 0 0;
     padding-top: 12px;
-    border-top: 1px solid black;
-    font-size: 13px;
+    border-top: 1.5px dashed #cfc6cc;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #ca6188;
+    text-transform: uppercase;
 }

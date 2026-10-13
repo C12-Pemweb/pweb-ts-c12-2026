@@ -51,14 +51,14 @@
 </section>
 
     <section class="login-panel" aria-labelledby="login-title">
-      <nav class="mini-nav" aria-label="Navigasi"><a href="ambil-antrian.html">Ambil Nomor ↗</a><a href="layar.html">Layar Antrian ↗</a></nav>
+      <div class="mini-nav"><span class="tag">PORTAL MASUK MELOCARE</span></div>
       <div class="login-card">
-        <div class="card-top"><span class="tag">STAFF ACCESS ONLY</span><span class="tag-icon" aria-hidden="true">✻</span></div>
-        <p class="eyebrow">STAFF LOGIN ✚</p>
+        <div class="card-top"><span class="tag">LOGIN PENGGUNA & STAF</span><span class="tag-icon" aria-hidden="true">✻</span></div>
+        <p class="eyebrow">SISTEM ANTRIAN ✚</p>
         <h2 id="login-title">Masuk ke <span>MeloCare</span></h2>
         <p class="description">
-          Login untuk mengelola sistem antrian rumah sakit dengan lebih cepat,
-          rapi, dan nyaman.
+          Sesuai ketentuan, seluruh pengguna (admin, staf, maupun pengunjung)
+          wajib login untuk mengakses layanan antrian.
         </p>
         <form id="login-form" novalidate>
           <label for="username">Username <span aria-hidden="true">✳</span></label>
@@ -66,9 +66,9 @@
           <label for="password">Password <span aria-hidden="true">✳</span></label>
           <div class="password-field"><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Masukkan password" required /><button id="toggle-password" type="button" aria-label="Tampilkan password" aria-pressed="false">Lihat</button></div>
           <p id="login-error" class="error-message" role="alert" aria-live="polite" hidden></p>
-          <button id="submit-button" class="submit-button" type="submit"><span id="button-label">Masuk ke Dashboard</span><span aria-hidden="true">↗</span></button>
+          <button id="submit-button" class="submit-button" type="submit"><span id="button-label">Masuk ke Sistem</span><span aria-hidden="true">↗</span></button>
         </form>
-        <div class="card-note"><span aria-hidden="true">✎</span><p>Gunakan akun uji dari <a href="https://dummyjson.com/users" target="_blank" rel="noopener noreferrer">DummyJSON</a>. Halaman publik tidak perlu login.</p></div>
+        <div class="card-note"><span aria-hidden="true">✎</span><p>Gunakan akun dari <a href="https://dummyjson.com/users" target="_blank" rel="noopener noreferrer">DummyJSON</a>. Role <strong>admin/moderator</strong> ke Dashboard & Operator; role <strong>user</strong> ke Ambil Antrian & Layar.</p></div>
       </div>
       <footer class="login-footer">made with care <span>♥</span> — MeloCare 2026</footer>
     </section>
