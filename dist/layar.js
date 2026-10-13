@@ -60,16 +60,22 @@
         const jenisAntrian = muatJenis().filter((jenis) => jenis.aktif);
         const semuaTiket = muatTiket();
         daftarAntrian?.replaceChildren();
+        if (jenisAntrian.length === 0) {
+            const kosong = document.createElement("p");
+            kosong.textContent = "Belum ada jenis antrian aktif saat ini.";
+            daftarAntrian?.appendChild(kosong);
+            return;
+        }
         jenisAntrian.forEach((jenis) => {
-            const tiketDipanggil = semuaTiket.find((tiket) => tiket.jenisKode === jenis.kode && tiket.status === "dipanggil");
-            const jumlahMenunggu = semuaTiket.filter((tiket) => tiket.jenisKode === jenis.kode && tiket.status === "menunggu").length;
+            const tiketDipanggil = semuaTiket.find((tiket) => tiket.jenisKode.toUpperCase() === jenis.kode.toUpperCase() && tiket.status === "dipanggil");
+            const jumlahMenunggu = semuaTiket.filter((tiket) => tiket.jenisKode.toUpperCase() === jenis.kode.toUpperCase() && tiket.status === "menunggu").length;
             const kartu = document.createElement("div");
-            kartu.className = "kartu-antrian";
+            kartu.className = "kartu-layar";
             const nama = document.createElement("h3");
-            nama.textContent = jenis.nama;
+            nama.textContent = `${jenis.nama} (${jenis.kode})`;
             const status = document.createElement("p");
             status.className = tiketDipanggil ? "status dipanggil" : "status";
-            status.textContent = tiketDipanggil ? " SEDANG DIPANGGIL " : " BELUM ADA PANGGILAN ";
+            status.textContent = tiketDipanggil ? "SEDANG DIPANGGIL" : "BELUM ADA PANGGILAN";
             const nomor = document.createElement("p");
             nomor.className = "nomor";
             nomor.textContent = tiketDipanggil?.label ?? "-";
@@ -82,6 +88,7 @@
     }
     render();
     window.setInterval(render, 3000);
+    window.addEventListener("focus", render);
     window.addEventListener("storage", (event) => {
         if (event.key === JENIS_KEY ||
             event.key === TIKET_KEY ||
